@@ -1,0 +1,15 @@
+.google-btn {
+    width: 70%;
+    margin: 0 auto;
+    font-family: 'Quicksand', sans-serif;
+}
+.img-fluid{
+    height: 24px;
+    width: 24px;
+}
+
+
+/* .reset-pass-btn:focus {
+    outline: none;
+    box-shadow: none;
+} */
