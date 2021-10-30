@@ -33,25 +33,12 @@ const useFirebase = () => {
 
   //Sign In With Google
   const signInWithGoogle = () => {
-    signInWithPopup(auth, googleProvider)
-      .then(result => {
-        console.log(result.user);
-        setUser(result.user);
-      })
-      .catch(error => {
-        setError(error.message);
-      });
+    return signInWithPopup(auth, googleProvider);
   };
 
   //Sign In With Github
   const signInWithGithub = () => {
-    signInWithPopup(auth, githubProvider)
-      .then(result => {
-        setUser(result.user);
-      })
-      .catch(error => {
-        setError(error.message);
-      });
+    return signInWithPopup(auth, githubProvider);
   };
 
   //Toggle

@@ -1,5 +1,6 @@
 // import React, { useState } from 'react';
 import { Button } from 'react-bootstrap';
+import { useHistory, useLocation } from 'react-router';
 import useAuth from '../../hooks/useAuth';
 import './Login.css';
 
@@ -17,6 +18,22 @@ const Login = () => {
     error,
   } = useAuth();
 
+  const location = useLocation();
+  const history = useHistory();
+  const redirect_uri = location.state?.from || '/home';
+
+  const handleGoogleLogin = () => {
+    signInWithGoogle().then(result => {
+      history.push(redirect_uri);
+    });
+  };
+
+  const handleGithubLogin = () => {
+    signInWithGithub().then(result => {
+      history.push(redirect_uri);
+    });
+  };
+
   return (
     <div className="text-center mt-5">
       <div className="d-grid gap-2 col-6 mx-auto">
@@ -24,7 +41,7 @@ const Login = () => {
           variant="dark"
           className=" btn btn-dark fs-5 google-btn"
           type="button"
-          onClick={signInWithGoogle}
+          onClick={handleGoogleLogin}
         >
           <img
             className="me-1 img-fluid"
@@ -37,7 +54,7 @@ const Login = () => {
           variant="dark"
           className=" btn btn-dark fs-5 google-btn"
           type="button"
-          onClick={signInWithGithub}
+          onClick={handleGithubLogin}
         >
           <img
             className="me-1 img-fluid"
