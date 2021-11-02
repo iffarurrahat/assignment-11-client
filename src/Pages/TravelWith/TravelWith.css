@@ -1,0 +1,40 @@
+.travel-bg{
+    background-image: url( https://i.ibb.co/rbW205t/travel.png);
+    background-position: center;
+    background-size: cover;
+}
+
+.travel-card {
+    color: #fff;
+    background: #304f47;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 0 64px rgb(17 17 17 / 10%);
+    border-radius: 5px;
+    margin-bottom: 100px
+}
+.card-img svg {
+    color: #fff;
+    font-size: 80px;
+    margin: 10px 0px;
+}
+.travel-text h5 {
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 32px;
+    color: #fff;
+    font-family: "Quicksand",sans-serif;
+}
+
+.travel-top-title{
+    font-style: normal;
+    font-weight: 700;
+    font-family: "Quicksand",sans-serif;
+}
+
+.text-title{
+    font-size: 40px;
+    line-height: 46px;
+    text-transform: capitalize;
+    font-family: "Quicksand",sans-serif;
+}

@@ -1,0 +1,42 @@
+.travel-com{
+    background-image: url(https://i.ibb.co/N1rmFTF/group.png);
+    background-position: center;
+    background-size: cover;
+}
+
+.section-h5 {
+    margin-bottom: 15px;
+    font-size: 20px;
+    color: #ff7f47;
+    line-height: 1;
+}
+
+.section-h2 {
+    font-size: 40px;
+    line-height: 46px;
+    text-transform: capitalize;
+}
+
+.client-img {
+    height: 100%;
+    width: 100%;
+}
+
+.card-body {
+    text-align: start;
+}
+
+.card-title {
+    font-weight: 700;
+    font-size: 23px;
+    line-height: 32px;
+    color: #262339;
+}
+
+.card-body h5 {
+    margin: 12px 0 22px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    color: #304f47;
+}

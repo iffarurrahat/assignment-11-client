@@ -1,5 +1,6 @@
-import initializeFirebaseApp from './../useFirebase/useFirebase.init';
+import initializeAuthentication from '../Firebase/firebase.init';
 import { useState, useEffect } from 'react';
+
 import {
   getAuth,
   signInWithPopup,
@@ -14,7 +15,7 @@ import {
   signOut,
 } from 'firebase/auth';
 
-initializeFirebaseApp();
+initializeAuthentication();
 
 const useFirebase = () => {
   //google or github state
@@ -27,12 +28,16 @@ const useFirebase = () => {
   const [password, setPassword] = useState('');
   const [isLogin, setIsLogin] = useState(false);
 
+  //Reload state
+  const [isReload, setIsReload] = useState(true);
+
   const auth = getAuth();
   const googleProvider = new GoogleAuthProvider();
   const githubProvider = new GithubAuthProvider();
 
   //Sign In With Google
   const signInWithGoogle = () => {
+    setIsReload();
     return signInWithPopup(auth, googleProvider);
   };
 
@@ -130,18 +135,24 @@ const useFirebase = () => {
 
   //Logout
   const logout = () => {
-    signOut(auth).then(() => {
-      setUser({});
-    });
+    setIsReload(true);
+    signOut(auth)
+      .then(() => {
+        setUser({});
+      })
+      .finally(() => setIsReload(false));
   };
 
   //State Change Manage Users
   useEffect(() => {
     onAuthStateChanged(auth, user => {
       if (user) {
-        // console.log('insude state change', user);
+        // console.log('inside state change', user);
         setUser(user);
+      } else {
+        setUser({});
       }
+      setIsReload(false);
     });
   }, []);
 
@@ -157,6 +168,8 @@ const useFirebase = () => {
     handleRegistration,
     toggleLogin,
     handleResetPassword,
+    isReload,
+    setIsReload,
     logout,
   };
 };
