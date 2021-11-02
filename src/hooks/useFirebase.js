@@ -1,6 +1,5 @@
-import initializeAuthentication from '../Firebase/firebase.init';
+import initializeFirebaseApp from './../useFirebase/useFirebase.init';
 import { useState, useEffect } from 'react';
-
 import {
   getAuth,
   signInWithPopup,
@@ -15,7 +14,7 @@ import {
   signOut,
 } from 'firebase/auth';
 
-initializeAuthentication();
+initializeFirebaseApp();
 
 const useFirebase = () => {
   //google or github state
