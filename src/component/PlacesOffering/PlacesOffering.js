@@ -1,7 +1,7 @@
 import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import './PlacesOffering.css';
 import { BiCalendar } from 'react-icons/bi';
 import { FiMapPin } from 'react-icons/fi';
@@ -62,6 +62,7 @@ const PlacesOffering = () => {
                     <span>More Details</span>
                     <BsArrowRight />
                   </Button>
+                  <Link to={`/placesOfferingDetails/${place.key}`}>Click</Link>
                 </div>
               </div>
             </div>

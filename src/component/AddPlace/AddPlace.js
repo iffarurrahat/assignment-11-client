@@ -1,8 +1,13 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import useAuth from '../../hooks/useAuth';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const AddPlace = () => {
+  const diffToast = () => {
+        toast.success('Successfully added the user');
+      };
   const { user } = useAuth();
   const {
     register,
@@ -58,8 +63,8 @@ const AddPlace = () => {
             />
             <br />
             <input
-              {...register('image', { required: true })}
-              placeholder="Image Link"
+              {...register('img')}
+              placeholder="image url"
               className="form-control"
             />
             <br />
@@ -70,8 +75,9 @@ const AddPlace = () => {
             />{' '}
             <br />
             {errors.exampleRequired && <span>This field is required</span>}
-            <input type="submit" className="btn btn-success" />
+            <input type="submit" className="btn btn-success" onClick={diffToast} />
           </form>
+          <ToastContainer />
         </div>
       </div>
     </div>
@@ -80,11 +86,14 @@ const AddPlace = () => {
 
 export default AddPlace;
 
+
+
+
 // import { useRef } from 'react';
 // import { ToastContainer, toast } from 'react-toastify';
 // import 'react-toastify/dist/ReactToastify.css';
 
-// const AddPlace = () => {
+// const AddPlace = () => {  
 //   const diffToast = () => {
 //     toast.success('Successfully added the user');
 //   };

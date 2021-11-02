@@ -30,25 +30,25 @@ function App() {
             <Route exact path="/placesOffering">
               <PlacesOffering></PlacesOffering>
             </Route>
-            <PrivateRoute exact path="/placesOfferingDetails">
+            <PrivateRoute exact path="/placesOfferingDetails/:id">
               <PlacesOfferingDetails></PlacesOfferingDetails>
             </PrivateRoute>
-            <Route exact path="/manageAllPlace">
+            <PrivateRoute exact path="/manageAllPlace">
               <ManageAllPlace></ManageAllPlace>
-            </Route>
-            <Route exact path="/ourOrder">
+            </PrivateRoute>
+            <PrivateRoute exact path="/ourOrder">
               <OurOrder></OurOrder>
-            </Route>
-            <Route exact path="/addPlace">
+            </PrivateRoute>
+            <PrivateRoute exact path="/addPlace">
               <AddPlace></AddPlace>
-            </Route>
+            </PrivateRoute>
             <Route exact path="/login">
               <Login></Login>
             </Route>
             <Route exact path="/register">
               <Register></Register>
             </Route>
-            <Route exact path="*">
+            <Route path="*">
               <NotFound></NotFound>
             </Route>
           </Switch>

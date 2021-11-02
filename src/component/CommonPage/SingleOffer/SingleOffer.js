@@ -19,3 +19,13 @@ const SingleOffer = ({ service }) => {
 };
 
 export default SingleOffer;
+
+
+
+
+
+
+
+
+
+

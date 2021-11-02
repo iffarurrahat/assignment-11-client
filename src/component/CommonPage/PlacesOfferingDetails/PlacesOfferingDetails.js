@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import SingleOffer from '../singleOffer/singleOffer';
+import SingleOffer from '../SingleOffer/SingleOffer';
 
 const PlacesOfferingDetails = () => {
-  const [singleDetails, setSingleDetails] = useState({});
+  const [singleDetails, setSingleDetails] = useState([]);
   console.log(singleDetails);
 
   useEffect(() => {
@@ -17,6 +17,7 @@ const PlacesOfferingDetails = () => {
         {singleDetails.map(service => (
           <SingleOffer key={service._id} service={service}></SingleOffer>
         ))}
+        hello
       </div>
     </div>
   );
