@@ -6,7 +6,6 @@ import './PlacesOffering.css';
 import { BiCalendar } from 'react-icons/bi';
 import { FiMapPin } from 'react-icons/fi';
 import { BsArrowRight } from 'react-icons/bs';
-import { Button } from 'react-bootstrap';
 
 const PlacesOffering = () => {
   const [places, setPlaces] = useState([]);
@@ -53,16 +52,8 @@ const PlacesOffering = () => {
                   <span className="package-title ms-1">{place.name}</span>
                 </h5>
                 <div className="text-start">
-                  <Button
-                    style={{ outline: 'none' }}
-                    className="package-btn"
-                    onClick={() => handleDetails(place.key)}
-                    variant="link"
-                  >
-                    <span>More Details</span>
-                    <BsArrowRight />
-                  </Button>
-                  <Link to={`/placesOfferingDetails/${place.key}`}>Click</Link>
+                  <Link to={`/placesOfferingDetails/${place.key} `}>Click</Link>
+                  <BsArrowRight />
                 </div>
               </div>
             </div>
